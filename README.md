@@ -10,14 +10,15 @@ Client1 (192.168.10.2)
      |
 Strongswan1
   ens192: 192.168.10.1
-  ens224: 10.0.0.1  <----- TUNNEL ----->  10.0.0.2 :ens192
-                                   |
-                              Strongswan2
-                              ens224: 192.168.20.1
-                                   |
-                                   | LAN
-                                   |
-                              Client2 (192.168.20.2)
+  ens224: 10.0.0.1  <----- TUNNEL ----->  
+                                        |
+                                    Strongswan2
+                                    ens192: 10.0.0.2
+                                    ens224: 192.168.20.1
+                                        |
+                                        | LAN
+                                        |
+                                    Client2 (192.168.20.2)
 ```
 
 ## IP Configuration
