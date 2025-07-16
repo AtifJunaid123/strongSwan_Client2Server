@@ -20,6 +20,11 @@ Strongswan1
                                         |
                                     Client2 (192.168.20.2)
 ```
+## Install Strongswan
+```bash
+sudo apt update
+sudo apt install strongswan strongswan-pki libcharon-extra-plugins libcharon-extauth-plugins libstrongswan-extra-plugins
+```
 
 ## IP Configuration
 
