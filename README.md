@@ -179,6 +179,20 @@ sudo ip xfrm policy add dir in  src 1.1.1.3 dst 1.1.1.2 proto icmp action allow
 sudo ip xfrm policy add dir out src 1.1.1.3 dst 1.1.1.2 proto icmp action allow
 sudo ip xfrm policy add dir in  src 1.1.1.2 dst 1.1.1.3 proto icmp action allow
 ```
+## Delete any ICMP allow rules
+
+**On both VM1 and VM2, run:**
+```bash
+# Delete any existing "allow ICMP unencrypted" policies
+#VM1
+sudo ip xfrm policy delete dir out src 1.1.1.2 dst 1.1.1.3 proto icmp
+sudo ip xfrm policy delete dir in  src 1.1.1.3 dst 1.1.1.2 proto icmp
+
+#VM2
+sudo ip xfrm policy delete dir out src 1.1.1.3 dst 1.1.1.2 proto icmp
+sudo ip xfrm policy delete dir in  src 1.1.1.2 dst 1.1.1.3 proto icmp
+
+```
 
 
 ## Result
