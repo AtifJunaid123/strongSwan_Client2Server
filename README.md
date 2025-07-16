@@ -146,3 +146,16 @@ ping 192.168.10.2  # From Client2
 
 - Site-to-site tunnel established
 - Clients can ping across securely over the IPsec tunnel
+
+
+## EXTRAs
+## command to extract key
+sudo ip  xfrm state
+sudo ip xfrm policy
+
+## How to add Route
+    sudo ip link set vEth0_0 up
+   **kni1**
+    sudo ip route add 172.16.10.0/24 dev vEth0_0 (For @kni1)
+   **kni2**
+    sudo ip route add 192.168.105.0/24 dev vEth0_0 (For @kni2)
