@@ -136,26 +136,26 @@ ip route add 192.168.10.0/24 via 192.168.20.1
 ipsec restart
 ipsec statusall
 ```
-
-Test tunnel:
-```bash
-ping 192.168.20.2  # From Client1
-ping 192.168.10.2  # From Client2
-```
-## Result
-
-- Site-to-site tunnel established
-- Clients can ping across securely over the IPsec tunnel
-
-
 ## EXTRAs
 ## command to extract key
 sudo ip  xfrm state
 sudo ip xfrm policy
 
 ## How to add Route
-    sudo ip link set vEth0_0 up
+ ```bash   sudo ip link set vEth0_0 up ```
    **kni1**
-    sudo ip route add 172.16.10.0/24 dev vEth0_0 (For @kni1)
+ ```bash   sudo ip route add 172.16.10.0/24 dev vEth0_0``` (For @kni1)
    **kni2**
-    sudo ip route add 192.168.105.0/24 dev vEth0_0 (For @kni2)
+```bash    sudo ip route add 192.168.105.0/24 dev vEth0_0``` (For @kni2)
+
+
+## Test tunnel:
+```bash
+ping 192.168.20.2  # From Client1
+ping 192.168.10.2  # From Client2
+```
+
+## Result
+
+- Site-to-site tunnel established
+- Clients can ping across securely over the IPsec tunnel
