@@ -163,6 +163,24 @@ ping 192.168.20.2  # From Client1
 ping 192.168.10.2  # From Client2
 ```
 
+
+## Commands to Allow Unencrypted ICMP Between Both Sides
+
+#### On vm1 (1.1.1.2):
+
+```bash
+# Allow ICMP to bypass IPSec
+sudo ip xfrm policy add dir out src 1.1.1.2 dst 1.1.1.3 proto icmp action allow
+sudo ip xfrm policy add dir in  src 1.1.1.3 dst 1.1.1.2 proto icmp action allow
+```
+
+#### On vm2 (1.1.1.3):
+```bash
+sudo ip xfrm policy add dir out src 1.1.1.3 dst 1.1.1.2 proto icmp action allow
+sudo ip xfrm policy add dir in  src 1.1.1.2 dst 1.1.1.3 proto icmp action allow
+```
+
+
 ## Result
 
 - Site-to-site tunnel established
