@@ -143,10 +143,12 @@ sudo ip xfrm policy
 
 ## How to add Route
  ```bash   sudo ip link set vEth0_0 up ```
-   **kni1**
- ```bash   sudo ip route add 172.16.10.0/24 dev vEth0_0``` (For @kni1)
-   **kni2**
-```bash    sudo ip route add 192.168.105.0/24 dev vEth0_0``` (For @kni2)
+ #### kni1
+ ```bash   sudo ip route add 172.16.10.0/24 dev vEth0_0``` 
+ (For @kni1)
+#### kni2
+```bash    sudo ip route add 192.168.105.0/24 dev vEth0_0``` 
+(For @kni2)
 
 
 ## Test tunnel:
